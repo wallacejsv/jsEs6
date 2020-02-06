@@ -182,3 +182,20 @@ console.log(usuario5);
 // yarn add webpack webpack-cli -D
 
 // yarn add babel-loader -D
+
+import axios from 'axios';
+
+class Api {
+
+    static async getUserInfo(username) {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        } catch (err) {
+            console.log('erro na apí');
+        }
+    }
+
+}
+
+Api.getUserInfo('wallacejsv');
